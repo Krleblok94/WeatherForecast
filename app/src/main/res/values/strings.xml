@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="search_a_city">Search a city</string>
+    <string name="weather_data">Weather data</string>
+    <string name="error">Error</string>
+    <string name="city_not_found">City not found</string>
+    <string name="search_for_a_city_to_show_weather">Search for a city to show the weather</string>
+    <string name="search_for_a_city_to_show_forecast">Search for a city to show the forecast</string>
+</resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:id="@+id/tvDate" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:textSize="20sp"
+            android:textStyle="bold" android:visibility="visible"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTime"
+            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/tvDate" android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="16dp" app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:id="@+id/tvTemp" android:textSize="40sp"
+            android:textStyle="bold" android:textColor="@color/colorPrimary" android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTime"
+            android:layout_marginTop="4dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTempMax" app:layout_constraintStart_toEndOf="@+id/tvTemp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTempMin"
+            app:layout_constraintTop_toTopOf="@+id/tvTemp" app:layout_constraintVertical_chainStyle="spread"
+            android:textStyle="bold" android:textColor="@color/colorPrimary"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTempMin" app:layout_constraintStart_toEndOf="@+id/tvTemp"
+            android:layout_marginStart="24dp" app:layout_constraintBottom_toBottomOf="@+id/tvTemp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTempMax" android:textStyle="bold"
+            android:textColor="@color/colorPrimary"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_expand"
+            android:id="@+id/ivExpand" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            app:layout_constraintBottom_toTopOf="@+id/divider"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:id="@+id/divider"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTemp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailsContainer"
+            android:background="@color/lightGrey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            android:animateLayoutChanges="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWeatherType" android:textSize="16sp"
+                android:textColor="@android:color/black" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="12dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWeatherDescription" android:textSize="16sp"
+                android:textColor="@android:color/black" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvWeatherType" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCloudPercentage" android:textSize="16sp"
+                android:textColor="@android:color/black" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvWeatherDescription" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvPressure" android:textSize="16sp"
+                android:textColor="@android:color/black" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvCloudPercentage"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHumidity" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvPressure" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:textColor="@android:color/black" android:textSize="16sp"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWindSpeed" android:textSize="16sp"
+                android:textColor="@android:color/black" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvHumidity" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWindDegree" android:textSize="16sp"
+                android:textColor="@android:color/black" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvWindSpeed" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
